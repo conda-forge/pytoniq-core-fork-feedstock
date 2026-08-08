@@ -14,7 +14,7 @@ diff --git a/pytoniq_core/crypto/ciphers.py b/pytoniq_core/crypto/ciphers.py
 diff --git a/setup.py b/setup.py
 --- a/setup.py
 +++ b/setup.py
-@@ -28,4 +28,2 @@
+@@ -31,4 +33,2 @@
          "requests>=2.31.0",
 -        "x25519>=0.0.2",
 -        "setuptools>=65.5.1",

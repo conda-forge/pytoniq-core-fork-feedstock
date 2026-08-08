@@ -8,9 +8,9 @@ recipe:
 source:
   url: https://pypi.org/packages/source/p/pytoniq-core/pytoniq_core-${{ version }}.tar.gz
   sha256: 1792b8fe99d47284f9b111bcf53de4c5db30ee668e66d4e2ce49cc94cd4cad07
-  #patches:
- #   # Requested changes upstream: https://github.com/yungwine/pytoniq-core/issues/31
-  #  - use-nacl-crypto_scalarmult-cyphers.py.patch
+  patches:
+    # Requested changes upstream: https://github.com/yungwine/pytoniq-core/issues/31
+    - use-nacl-crypto_scalarmult-cyphers.py.patch
 
 build:
   number: 0

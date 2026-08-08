@@ -1,5 +1,5 @@
 context:
-  version: "0.1.46"
+  version: "0.2.0"
 
 recipe:
   name: pytoniq_core-split
@@ -7,7 +7,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/p/pytoniq-core/pytoniq_core-${{ version }}.tar.gz
-  sha256: c8e3cf9ccb1852780a725cd51ba7a66a28122eb39c8b9bb97dcdc5bd02c24734
+  sha256: 1792b8fe99d47284f9b111bcf53de4c5db30ee668e66d4e2ce49cc94cd4cad07
   patches:
     # Requested changes upstream: https://github.com/yungwine/pytoniq-core/issues/31
     - use-nacl-crypto_scalarmult-cyphers.py.patch
@@ -34,6 +34,9 @@ outputs:
         - requests
     tests:
       - python:
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pytoniq_core
           pip_check: true

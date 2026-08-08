@@ -6,15 +6,15 @@ diff --git a/pytoniq_core/crypto/ciphers.py b/pytoniq_core/crypto/ciphers.py
 -import x25519
 +from nacl import bindings as c
  
-@@ -120,3 +120,3 @@
+@@ -123,3 +123,3 @@
     """
--    return x25519.scalar_mult(private_key, public_key)
-+    return c.crypto_scalarmult(private_key, public_key)
+-    return typing.cast(bytes, x25519.scalar_mult(private_key, public_key))
++    return typing.cast(bytes, c.crypto_scalarmult(private_key, public_key))
  
 diff --git a/setup.py b/setup.py
 --- a/setup.py
 +++ b/setup.py
-@@ -28,4 +28,2 @@
+@@ -31,4 +33,2 @@
          "requests>=2.31.0",
 -        "x25519>=0.0.2",
 -        "setuptools>=65.5.1",
